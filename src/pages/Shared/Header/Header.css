@@ -1,0 +1,60 @@
+.header-bg {
+  background-color: #f0f0f2;
+  /* background-color: #F5F5F5; */
+}
+
+nav {
+  height: 100px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  margin-right: 15px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  text-decoration: none;
+  color: #111;
+  transition: 0.5s;
+}
+
+nav a.active {
+  color: #45999c;
+}
+
+nav a:hover {
+  color: #45999c;
+}
+nav a.default {
+  margin: 0;
+}
+
+.social-icon a {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  nav {
+    height: auto;
+    padding: 20px 0px;
+  }
+  nav ul {
+    padding: 10px 0px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  nav ul {
+    padding: 0px 0px;
+  }
+  nav ul li {
+    margin: 15px 0px;
+  }
+  div.d-flex.align-items-center.nav {
+    margin-left: 10px;
+  }
+}
