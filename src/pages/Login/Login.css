@@ -1,0 +1,10 @@
+.loginbg {
+  background-image: url(../../assets/login.jpg);
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  max-width: 84rem;
+}
