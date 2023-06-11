@@ -1,0 +1,16 @@
+h2 {
+  font-size: 25px;
+}
+
+ul li,
+p {
+  font-size: 16px;
+  margin: 10px 0px;
+}
+
+.saperator {
+  height: 1px;
+  width: 50%;
+  background: #579289;
+  margin: 5px 0px 20px 0px;
+}
