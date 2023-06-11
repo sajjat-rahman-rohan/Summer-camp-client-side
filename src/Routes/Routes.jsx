@@ -24,7 +24,6 @@ import AdminHome1 from "../pages/Dashboard/Admin/AdminHome1";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import Update from "../pages/Dashboard/Update/Update";
-import Details from "../pages/Dashboard/Details/Details";
 import InstructorRoute from "./InstructorRoute";
 
 export const router = createBrowserRouter([
@@ -56,14 +55,6 @@ export const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp></SignUp>,
-      },
-      {
-        path: "detail",
-        element: (
-          <PrivateRoute>
-            <Details></Details>
-          </PrivateRoute>
-        ),
       },
     ],
   },

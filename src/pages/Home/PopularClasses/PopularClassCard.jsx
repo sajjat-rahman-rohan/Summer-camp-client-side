@@ -1,39 +1,26 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import React from "react";
+import { useState } from "react";
+import useInstructor from "../../../hooks/useInstructor";
+import useAdmin from "../../../hooks/useAdmin";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAdmin from "../../hooks/useAdmin";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { ToastContainer } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
-import useInstructor from "../../hooks/useInstructor";
 
-const ClassCard = ({ item, refetch }) => {
+const PopularClassCard = ({ item, refetch }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
-  //   const [, refetch] = useCart();
 
   const [items, setItems] = useState(item);
-
-  //   console.log(items._id);
 
   const handleFavbtn = (id) => {
     console.log("button clicked");
     if (user && user.email) {
-      //   event.currentTarget.disabled = true;
-      //     const updatedData = classes.map((item) => {
-      //     if (item._id === id) {
-      //       const updatedPrice = item.availableSeat - 1;
-      //       return { ...item, availableSeat: updatedPrice, disabled: true };
-      //     }
-      //     console.log()
-      //     return item;
-      //   });
-      //     setClasses(updatedData);
-      //     console.log(updatedData);
-
       setItems((prevData) => {
         return {
           ...prevData,
@@ -66,7 +53,7 @@ const ClassCard = ({ item, refetch }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            refetch(); // refetch cart to update the number of items in the cart
+            refetch();
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -89,34 +76,22 @@ const ClassCard = ({ item, refetch }) => {
           navigate("/login", { state: { from: location } });
         }
       });
-
-      toast.success("Class Booked success! 👍", { autoClose: 500 });
     }
-    //  else {
-    //   navigate("/login", { state: { from: location } });
-    // }
   };
 
   return (
     <>
       <div className="card glass">
         <figure>
-          <img src={items.image} alt="classimg" />
+          <img src={items.image} alt="car!" />
         </figure>
-
         <div className="p-5 gap-0 card-body">
-          <h2 className="card-title">Name :{items.className}</h2>
-          <h3>
-            <b>Instructor Name :</b> {items.instructorName}
+          <h2 className="text-2xl card-title">Spanish</h2>
+          <h3 className="text-1xl">
+            <b>Total Student</b> : 327
           </h3>
-          <h4>
-            <b>Available Seats :</b> {items.availableSeat}
-          </h4>
-          <h4>
-            <b>Price :</b> $ {items.price}
-          </h4>
           <p>
-            <b>Description :</b> {items.description}
+            <b>Description</b> : {items.description}
           </p>
           {items.availableSeat === 0 || isAdmin || isInstructor ? (
             <>
@@ -137,20 +112,8 @@ const ClassCard = ({ item, refetch }) => {
           )}
         </div>
       </div>
-      {/* <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      /> */}
     </>
   );
 };
 
-export default ClassCard;
+export default PopularClassCard;

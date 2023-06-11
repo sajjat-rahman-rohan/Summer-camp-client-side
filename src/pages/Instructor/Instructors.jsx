@@ -7,11 +7,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaSkype } from "react-icons/fa";
 import img1 from "../../assets/instructors/teacher1.jpg";
-import img2 from "../../assets/instructors/teacher2.jpg";
-import img3 from "../../assets/instructors/teacher3.jpg";
-import img4 from "../../assets/instructors/teacher4.jpg";
-import img5 from "../../assets/instructors/teacher5.jpg";
-import img6 from "../../assets/instructors/teacher6.jpg";
 import useInstructors from "../../hooks/useInstructors";
 import InstructorCard from "./instructorCard";
 

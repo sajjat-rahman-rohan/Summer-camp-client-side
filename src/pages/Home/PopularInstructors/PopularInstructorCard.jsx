@@ -1,27 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
+import React from "react";
+import { useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaSkype, FaTwitter } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
-import useAdmin from "../../hooks/useAdmin";
+import { Link } from "react-router-dom";
 
-const InstructorCard = ({ item, refetch }) => {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isAdmin] = useAdmin();
-  //   const [, refetch] = useCart();
-
+const PopularInstructorCard = ({ item, refetch }) => {
   const [items, setItems] = useState(item);
 
-  console.log(items);
-
   return (
-    <div>
+    <>
       <div className="card shadow-xl glass">
         <figure className="px-10 pt-10">
           <img
-            src={item.image}
+            src={items.image}
             alt="Shoes"
             className="rounded-xl"
             style={{
@@ -31,25 +22,14 @@ const InstructorCard = ({ item, refetch }) => {
             }}
           />
         </figure>
-        <div className="pt-3 card-body">
+        <div className="pt-3 card-body items-center text-center">
           <h2 className="card-title">
-            <b>Name : </b> {item.InstructorName}
+            <b>Name</b> : {items.InstructorName}
           </h2>
-          <p className="m-0">
+          <p>
             <b>Description : </b>
             {item.Description}
           </p>
-          <div>
-            <p className="m-0">
-              <b>Email :</b> {item.email}
-            </p>
-            <p>
-              <b>Total Taken Classes :</b> {item.takenTotalClasses}
-            </p>
-            <p>
-              <b>Name Of Taken Classes :</b> {item.nameOfTakenClasses}
-            </p>
-          </div>
 
           <div className="grid grid-cols-4 gap-6">
             <Link to="https://www.linkedin.com/">
@@ -76,8 +56,8 @@ const InstructorCard = ({ item, refetch }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default InstructorCard;
+export default PopularInstructorCard;

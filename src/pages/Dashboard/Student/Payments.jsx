@@ -6,7 +6,6 @@ import Checkout from "../Student/Checkout";
 import { Elements } from "@stripe/react-stripe-js";
 import { useLoaderData } from "react-router-dom";
 import useSelectedClass from "../../../hooks/useselectedclass";
-import CheckoutForm from "../Payment/CheckoutForm";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
