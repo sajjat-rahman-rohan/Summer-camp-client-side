@@ -1,0 +1,20 @@
+#light {
+  background-color: #fff;
+}
+
+#dark {
+  background-color: #121212;
+  color: white;
+}
+
+#dark .header nav a {
+  color: #0b94e3;
+}
+
+#dark .header nav a.active {
+  color: #bc7e4c;
+}
+
+#dark .header nav a:hover {
+  color: #a9a5c4;
+}
