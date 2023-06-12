@@ -1,3 +1,67 @@
-.carousel.carousel-slider .control-arrow {
-  height: 100%;
+.banner-con {
+  padding: 170px 0px;
+}
+
+.banner-con button {
+  padding: 2px 36px;
+  border-radius: 5px;
+  background-color: #1db41d;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+}
+
+.swiper-pagination {
+  margin-bottom: 20px;
+}
+
+.banner-bg-1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/banner/banner1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-bg-2 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/banner/banner2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-bg-3 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/banner/banner3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-bg-4 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../../assets/banner/banner4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 320px) {
+  .banner-con {
+    padding: 100px 0px;
+  }
 }

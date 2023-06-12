@@ -1,31 +1,115 @@
 /* eslint-disable no-unused-vars */
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "@smastrom/react-rating/style.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css";
 import "./Banner.css";
-import img1 from "../../../assets/banner/banner1.jpg";
-import img2 from "../../../assets/banner/banner2.jpg";
-import img3 from "../../../assets/banner/banner3.jpg";
-import img4 from "../../../assets/banner/banner4.jpg";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
     <div>
-      <Carousel className="text-center">
-        <div>
-          <img src={img2} />
-        </div>
-        <div>
-          <img src={img1} />
-        </div>
-        <div>
-          <img src={img3} />
-        </div>
-        <div>
-          <img src={img4} />
-        </div>
-      </Carousel>
+      <Swiper
+        loop={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="banner-con banner-bg-1 flex justify-center items-center text-white text-center">
+            <div className="banner-box w-2/4">
+              <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
+              <h4 className="text-lg py-2">
+                TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
+                OPPORTUNITY FOR YOUR SCHOOL
+              </h4>
+              <p>
+                Dynamically target high-payoff intellectual capital for
+                customized technologies. Objectively integrate emerging core
+                competencies before process-centric communities.
+              </p>
+              <div>
+                <Link to="/signup">
+                  <button type="submit">SignUp</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="banner-con banner-bg-2 flex justify-center items-center text-white text-center">
+            <div className="banner-box w-2/4">
+              <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
+              <h4 className="text-lg py-2">
+                TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
+                OPPORTUNITY FOR YOUR SCHOOL
+              </h4>
+              <p>
+                Dynamically target high-payoff intellectual capital for
+                customized technologies. Objectively integrate emerging core
+                competencies before process-centric communities.
+              </p>
+              <div>
+                <Link to="/signup">
+                  <button type="submit">SignUp</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="banner-con banner-bg-3 flex justify-center items-center text-white text-center">
+            <div className="banner-box w-2/4">
+              <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
+              <h4 className="text-lg py-2">
+                TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
+                OPPORTUNITY FOR YOUR SCHOOL
+              </h4>
+              <p>
+                Dynamically target high-payoff intellectual capital for
+                customized technologies. Objectively integrate emerging core
+                competencies before process-centric communities.
+              </p>
+              <div>
+                <Link to="/signup">
+                  <button type="submit">SignUp</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="banner-con banner-bg-4 flex justify-center items-center text-white text-center">
+            <div className="banner-box w-2/4">
+              <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
+              <h4 className="text-lg py-2">
+                TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
+                OPPORTUNITY FOR YOUR SCHOOL
+              </h4>
+              <p>
+                Dynamically target high-payoff intellectual capital for
+                customized technologies. Objectively integrate emerging core
+                competencies before process-centric communities.
+              </p>
+              <div>
+                <Link to="/signup">
+                  <button type="submit">SignUp</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

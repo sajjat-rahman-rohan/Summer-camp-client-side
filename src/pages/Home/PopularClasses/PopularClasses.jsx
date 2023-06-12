@@ -1,37 +1,24 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAdmin from "../../../hooks/useAdmin";
-import { AuthContext } from "../../../providers/AuthProvider";
-import { useContext } from "react";
-
+import React, { useState, useEffect } from "react";
 import useClasses from "../../../hooks/useClasses";
 import PopularClassCard from "./PopularClassCard";
+import axios from "axios";
 
 const PopularClasses = () => {
-  const [fold, setFold] = useState(true);
-
-  const { user } = useContext(AuthContext);
-  const [isAdmin] = useAdmin();
-
-  const [classes, refetch] = useClasses();
+  const [classes, setClasses] = useState([]);
+  const [refetch] = useClasses();
   console.log(classes);
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  const seats = 10;
-
-  const [value, setValue] = useState(seats);
-
-  const handleClick = (event) => {
-    if (user) {
-      event.currentTarget.disabled = true;
-      console.log("button clicked");
-      setValue((prevValue) => prevValue - 1);
-    } else {
-      navigate("/login", { state: { from: location } });
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/classes");
+      setClasses(response.data);
+    } catch (error) {
+      console.error(error);
     }
   };
 

@@ -4,11 +4,26 @@ import { useState } from "react";
 import PopularInstructorCard from "./PopularInstructorCard";
 import { key } from "localforage";
 import useInstructors from "../../../hooks/useInstructors";
+import { useEffect } from "react";
+import axios from "axios";
 
 const PopularInstructors = () => {
-  const [fold, setFold] = useState(true);
+  const [instructors, setInstructors] = useState([]);
+  const [refetch] = useInstructors();
+  console.log(instructors);
 
-  const [instructors, refetch] = useInstructors();
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/instructors");
+      setInstructors(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto mb-24 ">

@@ -111,8 +111,7 @@ const StudentHome = () => {
                 <b>ADDRESS</b>
               </h3>
               <p className="text-gray-500">
-                {" "}
-                125 Govt College Street, Monohorpur
+                South Manda, Mugda para, Dhaka-1214
               </p>
             </div>
           </div>
@@ -169,7 +168,7 @@ const StudentHome = () => {
               <h3>
                 <b>JOINED SINCE</b>
               </h3>
-              <p className="text-gray-500">20/10/2020</p>
+              <p className="text-gray-500">{user?.metadata.creationTime}</p>
             </div>
           </div>
         </div>
