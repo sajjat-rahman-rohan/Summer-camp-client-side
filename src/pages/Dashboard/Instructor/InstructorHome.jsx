@@ -3,20 +3,36 @@ import React from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext } from "react";
 import { FaFileVideo, FaUserFriends } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const InstructorHome = () => {
   const { user } = useContext(AuthContext);
 
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours();
+  let greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good morning";
+  } else if (currentHour < 19) {
+    greeting = "Good afternoon";
+  } else {
+    greeting = "Good evening";
+  }
+
   return (
     <div className="p-5">
       <div className="flex items-center gap-3 mb-5">
+        <Helmet>
+          <title>Dashboard | Instructor-home</title>
+        </Helmet>
         <div className="avatar">
           <div className="w-16 rounded-full ">
             <img src={user.photoURL} />
           </div>
         </div>
         <h2 className="text-4xl">
-          Wellcome <b>{user.displayName}</b> !
+          {greeting} <b>{user.displayName}</b> !
         </h2>
       </div>
 

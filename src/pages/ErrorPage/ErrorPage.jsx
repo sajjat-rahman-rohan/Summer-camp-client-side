@@ -11,7 +11,7 @@ const ErrorPage = () => {
       style={{ height: "100vh" }}
     >
       <Helmet>
-        <title>Ola Conversa | Error</title>
+        <title>Ola Conversa | Error </title>
       </Helmet>
       <div>
         <img src={errorImg} className="img-fluid inline" alt="" />

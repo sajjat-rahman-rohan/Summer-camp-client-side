@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-// import { CountUp } from "use-count-up";
 import CountUp from "react-countup";
 import { FaFile, FaRegClock, FaUserFriends, FaUserTie } from "react-icons/fa";
 import "./Counter.css";
@@ -47,7 +46,6 @@ const Counter = () => {
             <FaRegClock className="text-4xl text-white inline"></FaRegClock>
             <h2 className="text-2xl my-3">
               <CountUp start={0} end={3} duration={15} />
-              {/* <CountUp isCounting end={3} duration={15} /> */}
             </h2>
             <h5 className="text-sm">DURATION MONTH</h5>
           </div>

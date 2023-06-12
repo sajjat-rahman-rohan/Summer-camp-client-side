@@ -26,9 +26,9 @@ const PopularClasses = () => {
     <div className="max-w-screen-xl mx-auto mb-24">
       <div>
         <h2 className="text-center text-4xl">Popular Classes</h2>
-        <div className="divider w-96 mx-auto"></div>
+        <div className="divider md:w-96 mx-auto"></div>
       </div>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-10">
         {classes.slice(0, 6).map((item) => (
           <PopularClassCard
             key={item._id}

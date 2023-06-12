@@ -1,44 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { ToastContainer } from "react-bootstrap";
-import { FaUserShield } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 const ManageClass = ({ item, index, refetch }) => {
-  const [status, setStatus] = useState("pending");
-
-  let pTagValue;
-  let bgColor;
-
-  if (status === "pending") {
-    pTagValue = "Pending";
-    bgColor = "yellow";
-  } else if (status === "approved") {
-    pTagValue = "Approved";
-    bgColor = "green";
-  } else if (status === "denied") {
-    pTagValue = "Denied";
-    bgColor = "red";
-  } else {
-    pTagValue = "Unknown";
-    bgColor = "gray";
-  }
-
-  const pTagStylea = {
-    backgroundColor: "green",
-  };
-  const pTagStylep = {
-    backgroundColor: "yellow",
-  };
-
-  const handleClick = (event) => {
-    event.currentTarget.disabled = true;
-    setStatus("approved");
-    toast.success("Approved success! 👍", { autoClose: 500 });
-    console.log("button clicked");
-  };
   const statusChange = (item) => {
     fetch(`http://localhost:5000/classes/approved/${item._id}`, {
       method: "PATCH",
@@ -137,25 +102,6 @@ const ManageClass = ({ item, index, refetch }) => {
               pending
             </button>
           )}
-          {/* <button
-            style={pTagStyle}
-            onClick={handleClick}
-            className="rounded text-black text-xs"
-          >
-            {pTagValue}
-          </button>
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          /> */}
         </td>
         <td>
           <p>

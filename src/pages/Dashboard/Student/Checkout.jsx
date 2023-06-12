@@ -48,7 +48,6 @@ const Checkout = ({ selectClasses, price }) => {
       setCardError(error.message);
     } else {
       setCardError("");
-      // console.log('payment method', paymentMethod)
     }
 
     setProcessing(true);
@@ -78,7 +77,6 @@ const Checkout = ({ selectClasses, price }) => {
         icon: "success",
         confirmButtonText: "Cool",
       });
-      // save payment information to the server
       const payment = {
         email: user?.email,
         transactionId: paymentIntent.id,

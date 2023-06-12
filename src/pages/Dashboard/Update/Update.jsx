@@ -5,6 +5,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Update = () => {
   const { user } = useContext(AuthContext);
@@ -44,8 +45,6 @@ const Update = () => {
     };
     console.log(updatedclass);
 
-    //   // fetch(`https://server-kappa-rosy.vercel.app/addedtoy/${_id}`, {
-
     fetch(`http://localhost:5000/classes/${_id}`, {
       method: "PUT",
       headers: {
@@ -69,6 +68,9 @@ const Update = () => {
 
   return (
     <div className="p-5 text-center">
+      <Helmet>
+        <title>Dashboard | Class-update</title>
+      </Helmet>
       <h2 className="text-3xl py-5">
         Update Class Information : <b>{updateclass.className}</b>
       </h2>
@@ -82,7 +84,6 @@ const Update = () => {
             <input
               type="text"
               name="className"
-              // placeholder="Class Name"
               defaultValue={className}
               className="input h-10"
               style={{ width: "100%" }}
@@ -98,8 +99,6 @@ const Update = () => {
             <input
               type="text"
               name="instructorName"
-              // placeholder="Instructor Name"
-              // defaultValue={user?.displayName}
               defaultValue={instructorName}
               className="input h-10"
               style={{ width: "100%" }}
@@ -115,8 +114,6 @@ const Update = () => {
             <input
               type="email"
               name="email"
-              // placeholder="Instructor Email"
-              // defaultValue={user?.email}
               defaultValue={email}
               className="input h-10"
               style={{ width: "100%" }}
@@ -132,7 +129,6 @@ const Update = () => {
             <input
               type="number"
               name="availableSeat"
-              // placeholder="Available Seats"
               defaultValue={availableSeat}
               className="input h-10"
               style={{ width: "100%" }}
@@ -148,7 +144,6 @@ const Update = () => {
             <input
               type="number"
               name="price"
-              // placeholder="Price"
               defaultValue={price}
               className="input h-10"
               style={{ width: "100%" }}
@@ -164,7 +159,6 @@ const Update = () => {
             <textarea
               type="text"
               name="description"
-              // placeholder="Description"
               defaultValue={description}
               className="p-4 rounded"
               style={{ width: "100%" }}

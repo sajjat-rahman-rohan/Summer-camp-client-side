@@ -13,27 +13,12 @@ const ClassCard = ({ item, refetch }) => {
   const location = useLocation();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
-  //   const [, refetch] = useCart();
 
   const [items, setItems] = useState(item);
-
-  //   console.log(items._id);
 
   const handleFavbtn = (id) => {
     console.log("button clicked");
     if (user && user.email) {
-      //   event.currentTarget.disabled = true;
-      //     const updatedData = classes.map((item) => {
-      //     if (item._id === id) {
-      //       const updatedPrice = item.availableSeat - 1;
-      //       return { ...item, availableSeat: updatedPrice, disabled: true };
-      //     }
-      //     console.log()
-      //     return item;
-      //   });
-      //     setClasses(updatedData);
-      //     console.log(updatedData);
-
       setItems((prevData) => {
         return {
           ...prevData,
@@ -66,7 +51,7 @@ const ClassCard = ({ item, refetch }) => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            refetch(); // refetch cart to update the number of items in the cart
+            refetch();
             Swal.fire({
               position: "top-end",
               icon: "success",
@@ -92,9 +77,6 @@ const ClassCard = ({ item, refetch }) => {
 
       toast.success("Class Booked success! 👍", { autoClose: 500 });
     }
-    //  else {
-    //   navigate("/login", { state: { from: location } });
-    // }
   };
 
   return (
@@ -137,18 +119,6 @@ const ClassCard = ({ item, refetch }) => {
           )}
         </div>
       </div>
-      {/* <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      /> */}
     </>
   );
 };

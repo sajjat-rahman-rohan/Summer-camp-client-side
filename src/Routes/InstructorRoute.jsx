@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Navigate, useLocation } from "react-router";
 import useAuth from "../hooks/useAuth";
-import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 
 const InstructorRoute = ({ children }) => {

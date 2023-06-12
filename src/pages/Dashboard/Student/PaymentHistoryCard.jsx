@@ -4,7 +4,6 @@ import React from "react";
 const PaymentHistoryCard = ({ item, index }) => {
   const name = item.classesNames.map((classes, index) => (
     <div key={index}>
-      {/* <span>{index + 1}</span> */}
       <span>{classes}</span>
     </div>
   ));

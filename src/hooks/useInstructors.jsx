@@ -5,7 +5,6 @@ import useAuth from "./useAuth";
 
 const useInstructors = () => {
   const { user, loading } = useAuth();
-  // const token = localStorage.getItem('access-token');
   const [axiosSecure] = useAxiosSecure();
   const { refetch, data: instructor = [] } = useQuery({
     queryKey: ["instructors"],

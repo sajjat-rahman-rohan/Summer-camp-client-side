@@ -169,44 +169,6 @@ const SignUp = () => {
                   </p>
                 )}
               </div>
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Confirm Password</span>
-                </label>
-                <input
-                  type="password"
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 20,
-                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
-                  })}
-                  placeholder="password"
-                  className="m-0"
-                />
-                {errors.password?.type === "required" && (
-                  <p className="text-red-600">Password is required</p>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <p className="text-red-600">Password must be 6 characters</p>
-                )}
-                {errors.password?.type === "maxLength" && (
-                  <p className="text-red-600">
-                    Password must be less than 20 characters
-                  </p>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <p className="text-red-600">
-                    Password must have one Uppercase one lower case, one number
-                    and one special character.
-                  </p>
-                )}
-                <label className="label p-0">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
-              </div> */}
               <div className="form-control mt-2">
                 <input
                   className="btn btn-primary"

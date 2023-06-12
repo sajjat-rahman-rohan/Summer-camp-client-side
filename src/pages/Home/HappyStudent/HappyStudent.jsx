@@ -11,7 +11,7 @@ const HappyStudent = () => {
         <h2 className="text-center text-4xl">Our Old Summer Camp Students</h2>
         <div className="divider w-96 mx-auto"></div>
       </div>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-10">
         <div>
           <div className="card glass p-6">
             <h3 className="text-cyan-700"> AWESOME!</h3>

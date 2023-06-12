@@ -4,8 +4,8 @@ import img from "../../../assets/payment.jpg";
 import { loadStripe } from "@stripe/stripe-js";
 import Checkout from "../Student/Checkout";
 import { Elements } from "@stripe/react-stripe-js";
-import { useLoaderData } from "react-router-dom";
 import useSelectedClass from "../../../hooks/useselectedclass";
+import { Helmet } from "react-helmet-async";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
@@ -29,6 +29,9 @@ const Payments = () => {
 
   return (
     <div className="px-3 text-center">
+      <Helmet>
+        <title>Dashboard | Payment</title>
+      </Helmet>
       <h2 className="text-3xl py-10">
         <u>
           <b>Payment Now </b>
@@ -57,33 +60,3 @@ const Payments = () => {
 };
 
 export default Payments;
-
-{
-  /* <form className="my-5" onSubmit={handleSubmit}>
-<p>Please Enter your card number :</p>
-<CardElement
-  className="bg-slate-100 px-2 py-3 rounded"
-  options={{
-    style: {
-      base: {
-        fontSize: "16px",
-        color: "#424770",
-        "::placeholder": {
-          color: "#aab7c4",
-        },
-      },
-      invalid: {
-        color: "#9e2146",
-      },
-    },
-  }}
-/>
-<button
-  className="btn btn-primary btn-sm mt-4"
-  type="submit"
-  // disabled={!stripe || !clientSecret || processing}
->
-  Payment
-</button>
-</form> */
-}

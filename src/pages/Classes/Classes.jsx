@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import useClasses from "../../hooks/useClasses";
 import ClassCard from "./ClassCard";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
   const [classes, setClasses] = useState([]);
@@ -25,6 +26,9 @@ const Classes = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto mb-24">
+      <Helmet>
+        <title>Ola Conversa | All Classes</title>
+      </Helmet>
       <div>
         <h2 className="text-center text-4xl">
           Our Classes : <b>{classes.length}</b>

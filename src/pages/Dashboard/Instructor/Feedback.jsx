@@ -3,6 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -17,14 +18,7 @@ const Feedback = () => {
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
     setInputValue(inputValue);
-    // Assuming the input value is a number between 0 and 5
-    // You can add validation if needed
     setRating(parseFloat(inputValue));
-  };
-
-  const handleRatingClick = (value) => {
-    setRating(value);
-    setInputValue(String(value));
   };
 
   const updateFeedback = useLoaderData();
@@ -70,6 +64,9 @@ const Feedback = () => {
 
   return (
     <div className="p-3 text-center">
+      <Helmet>
+        <title>Dashboard | Feedback</title>
+      </Helmet>
       <h2 className="text-3xl py-5">
         <u>
           <b>Feedback Please</b>
@@ -105,12 +102,6 @@ const Feedback = () => {
                 name="rating"
                 onChange={handleInputChange}
               />
-              {/* <Rating
-                initialRating={rating}
-                onChange={handleRatingClick}
-                emptySymbol={<span className="icon">&#9734;</span>}
-                fullSymbol={<span className="icon">&#9733;</span>}
-              /> */}
             </label>
             <label className="label p-0">
               <h3 className="text-lg">Do you have any suggestion for me ? </h3>

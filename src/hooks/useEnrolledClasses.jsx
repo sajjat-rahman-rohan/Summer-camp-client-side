@@ -3,7 +3,6 @@ import useAxiosSecure from "./useAxiosSecure";
 import useAuth from "./useAuth";
 const useEnrolledClasses = () => {
   const { user, loading } = useAuth();
-  // const token = localStorage.getItem('access-token');
   const [axiosSecure] = useAxiosSecure();
   const { refetch, data: paymentcompleted = [] } = useQuery({
     queryKey: ["paymentcompleted", user?.email],
@@ -18,10 +17,3 @@ const useEnrolledClasses = () => {
   return [paymentcompleted, refetch];
 };
 export default useEnrolledClasses;
-
-// queryFn: async () => {
-//     const res = await fetch(`https://bistro-boss-server-deployment.vercel.app/carts?email=${user?.email}`, { headers: {
-//         authorization: `bearer ${token}`
-//     }})
-//     return res.json();
-// },

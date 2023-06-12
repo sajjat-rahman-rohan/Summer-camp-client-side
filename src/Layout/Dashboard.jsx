@@ -1,26 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { NavLink, Outlet } from "react-router-dom";
-import {
-  FaShoppingCart,
-  FaWallet,
-  FaCalendarAlt,
-  FaHome,
-  FaUtensils,
-  FaBook,
-  FaUsers,
-} from "react-icons/fa";
+import { FaWallet, FaCalendarAlt, FaHome } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
-import { useState } from "react";
+
 import "./Deshboard.css";
-import useInstructors from "../hooks/useInstructors";
+
 import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
-  // const isAdmin = true;
   const [isAdmin] = useAdmin();
 
   const [isInstructor] = useInstructor();
-  // const [isInstructor] = useState(true);
 
   return (
     <div className="drawer drawer-mobile max-w-screen-xl mx-auto">
@@ -90,11 +80,6 @@ const Dashboard = () => {
                   <FaWallet></FaWallet> My Enrolled Classes
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink to="/dashboard/payment">
-                  <FaWallet></FaWallet> Payment
-                </NavLink>
-              </li> */}
               <li>
                 <NavLink to="/dashboard/paymenthistory">
                   <FaWallet></FaWallet> Payment History

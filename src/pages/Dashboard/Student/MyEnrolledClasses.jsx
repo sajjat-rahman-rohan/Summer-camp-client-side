@@ -1,17 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import img from "../../../assets/classes/class1.jpg";
 import useEnrolledClasses from "../../../hooks/useEnrolledClasses";
 import EnrolledClass from "./EnrolledClass";
+import { Helmet } from "react-helmet-async";
 
 const MyEnrolledClasses = () => {
   const [myEnrolledClasses] = useEnrolledClasses();
-  // console.log(myEnrolledClasses);
-
-  // const test = myEnrolledClasses.map((item) => console.log(item._id));
 
   return (
     <div className="px-3 text-center">
+      <Helmet>
+        <title>Dashboard | Student-enrolled-class</title>
+      </Helmet>
       <h2 className="text-3xl py-5">
         <u>
           <b>My Enrolled Classes</b>
@@ -21,7 +21,6 @@ const MyEnrolledClasses = () => {
       <div>
         <div className="overflow-x-auto">
           <table className="table" style={{ width: "100%" }}>
-            {/* head */}
             <thead>
               <tr>
                 <th>#</th>

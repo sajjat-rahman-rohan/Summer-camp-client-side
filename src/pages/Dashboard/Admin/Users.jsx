@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const Users = ({ user, index, refetch }) => {
@@ -104,67 +103,24 @@ const Users = ({ user, index, refetch }) => {
         <td>{user.name}</td>
         <td>{user.email ? user.email : "unknown"}</td>
         <td>
-          {/* <button
-                      style={pTagStyle1}
-                      onClick={handleClickA}
-                      className="rounded text-black text-xs"
-                      disabled={button1Disabled}
-                    >
-                      {pTagValue1}
-                    </button>
-                    <ToastContainer
-                      position="top-center"
-                      autoClose={5000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"
-                    /> */}
           {user.role === "admin" ? (
             "admin"
           ) : (
-            <button
-              onClick={() => handleMakeAdmin(user)}
-              className="btn btn-ghost bg-orange-600  text-white"
-            >
-              <FaUserShield></FaUserShield>
-            </button>
+            <>
+              <button onClick={() => handleMakeAdmin(user)}>Make Admin</button>
+            </>
           )}
         </td>
         <td>
           {user.role === "instructor" ? (
             "instructor"
           ) : (
-            <button
-              onClick={() => handleMakeInstructor(user)}
-              className="btn btn-ghost bg-orange-600  text-white"
-            >
-              <FaUserShield></FaUserShield>
-            </button>
+            <>
+              <button onClick={() => handleMakeInstructor(user)}>
+                Make Instructor
+              </button>
+            </>
           )}
-          {/* <button
-                      style={pTagStyle2}
-                      onClick={handleClickI}
-                      className="rounded text-black text-xs"
-                    >
-                      {pTagValue2}
-                    </button>
-                    <ToastContainer
-                      position="top-center"
-                      autoClose={5000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"
-                    /> */}
         </td>
         <th>
           <button

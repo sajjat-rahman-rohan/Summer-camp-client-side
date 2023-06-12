@@ -5,7 +5,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="pt-8 pb-3 bg-neutral">
-      <div className="max-w-screen-xl px-4 mx-auto grid grid-cols-4 gap-4">
+      <div className="max-w-screen-xl px-4 mx-auto grid md:grid-cols-4 gap-4">
         <div className="text-gray-400">
           <img src={logo} className="h-12" alt="" />
           <p>

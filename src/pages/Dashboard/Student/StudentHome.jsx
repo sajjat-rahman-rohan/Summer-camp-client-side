@@ -2,6 +2,7 @@
 import React from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { useContext } from "react";
+import { useState, useEffect } from "react";
 import {
   FaAddressBook,
   FaCalendarWeek,
@@ -9,15 +10,12 @@ import {
   FaClinicMedical,
   FaGoogleDrive,
   FaIdCard,
-  FaLocationArrow,
   FaMapMarkerAlt,
   FaUserEdit,
   FaUserGraduate,
   FaWonSign,
 } from "react-icons/fa";
-import { useState } from "react";
-import { useEffect } from "react";
-import CountdownTimer from "./CountdownTimer";
+import { Helmet } from "react-helmet-async";
 
 const StudentHome = () => {
   const { user } = useContext(AuthContext);
@@ -34,11 +32,44 @@ const StudentHome = () => {
     greeting = "Good evening";
   }
 
-  const targetTime = new Date("2023-09-01T00:00:00").getTime();
+  const startTime = user?.metadata.creationTime;
+
+  const [countdown, setCountdown] = useState(getCountdown());
+
+  function getCountdown() {
+    const currentTime = new Date().getTime();
+    const endTime = new Date(startTime);
+    endTime.setMonth(endTime.getMonth() + 3);
+    const remainingTime = endTime.getTime() - currentTime;
+
+    return remainingTime > 0 ? remainingTime : 0;
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prevCountdown) =>
+        prevCountdown > 0 ? prevCountdown - 1000 : 0
+      );
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  function formatTime(time) {
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
 
   return (
     <div className="p-5">
       <div className="flex items-center gap-3 mb-5">
+        <Helmet>
+          <title>Dashboard | Student-home</title>
+        </Helmet>
         <div className="avatar">
           <div className="w-16 rounded-full ">
             <img src={user.photoURL} />
@@ -51,10 +82,14 @@ const StudentHome = () => {
 
       <div>
         <h2>
-          <b>Your All Classes Access Duration Countdown :</b>
+          <b>Your All Classes Access Duration 3 Month </b>
         </h2>
-        <div>
-          <CountdownTimer targetTime={targetTime} />
+        <div className="flex flex-col">
+          <span className="text-3xl">
+            <b>
+              Countdown : {"  "} {formatTime(countdown)}
+            </b>
+          </span>
         </div>
       </div>
 

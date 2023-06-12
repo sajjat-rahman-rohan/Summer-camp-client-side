@@ -5,6 +5,7 @@ import useInstructors from "../../hooks/useInstructors";
 import InstructorCard from "./instructorCard";
 import { useEffect } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Instructor = () => {
   const [instructors, setInstructors] = useState([]);
@@ -26,6 +27,9 @@ const Instructor = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto mb-24">
+      <Helmet>
+        <title>Ola Conversa | Instructors</title>
+      </Helmet>
       <div>
         <h2 className="text-center text-4xl">
           Our Instructors : <b>{instructors.length}</b>

@@ -10,7 +10,6 @@ import Tooltip from "react-bootstrap/Tooltip";
 import useAdmin from "../../../hooks/useAdmin";
 import "./Header.css";
 import ReactSwitch from "react-switch";
-import useInstructors from "../../../hooks/useInstructors";
 import useInstructor from "../../../hooks/useInstructor";
 
 const Header = ({ onChange, checked, theme }) => {
@@ -18,9 +17,6 @@ const Header = ({ onChange, checked, theme }) => {
   const [isAdmin] = useAdmin();
 
   const [isInstructor] = useInstructor();
-  // const [isInstructor] = useState(true);
-
-  // console.log(user.displayName);
 
   const handleLogOut = () => {
     logOut()
@@ -29,16 +25,16 @@ const Header = ({ onChange, checked, theme }) => {
   };
 
   return (
-    <div className="header">
-      <nav className="flex justify-between items-center max-w-screen-xl mx-auto">
+    <div className="header text-center">
+      <nav className="md:flex justify-between items-center max-w-screen-xl mx-auto">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "default")}
         >
-          <img src={logo} className="h-16" alt="" />
+          <img src={logo} className="h-16 inline" alt="" />
         </NavLink>
 
-        <ul className="gap-4 flex justify-between items-center">
+        <ul className="gap-4 md:flex justify-between items-center">
           <li>
             <NavLink
               to="/"
@@ -69,14 +65,6 @@ const Header = ({ onChange, checked, theme }) => {
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Blog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Login
             </NavLink>
           </li>
           {user?.email ? (
@@ -120,16 +108,16 @@ const Header = ({ onChange, checked, theme }) => {
             <></>
           )}
 
-          <div className="switch flex gap-2">
+          <div className="switch flex justify-center gap-2">
             <ReactSwitch onChange={onChange} checked={checked} />
             <label className="m-0">{theme}</label>
           </div>
         </ul>
 
         <div>
-          <Nav className="flex justify-between gap-3 items-center">
+          <Nav className="md:flex justify-between gap-3 items-center">
             {user && (
-              <div className="mt-5">
+              <div className="mt-2">
                 <OverlayTrigger
                   placement="bottom"
                   overlay={
@@ -166,13 +154,13 @@ const Header = ({ onChange, checked, theme }) => {
               <Button
                 onClick={handleLogOut}
                 variant="secondary"
-                className="px-4 py-2"
+                className="px-4 py-2 m-0"
               >
                 Logout
               </Button>
             ) : (
               <Link to="/login">
-                <Button variant="secondary">Login</Button>
+                <Button variant="secondary m-0">Login</Button>
               </Link>
             )}
           </Nav>

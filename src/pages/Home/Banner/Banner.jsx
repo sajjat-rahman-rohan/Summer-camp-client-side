@@ -27,7 +27,7 @@ const Banner = () => {
       >
         <SwiperSlide>
           <div className="banner-con banner-bg-1 flex justify-center items-center text-white text-center">
-            <div className="banner-box w-2/4">
+            <div className="banner-box md:w-2/4">
               <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
               <h4 className="text-lg py-2">
                 TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
@@ -48,7 +48,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="banner-con banner-bg-2 flex justify-center items-center text-white text-center">
-            <div className="banner-box w-2/4">
+            <div className="banner-box md:w-2/4">
               <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
               <h4 className="text-lg py-2">
                 TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
@@ -69,7 +69,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="banner-con banner-bg-3 flex justify-center items-center text-white text-center">
-            <div className="banner-box w-2/4">
+            <div className="banner-box md:w-2/4">
               <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
               <h4 className="text-lg py-2">
                 TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS
@@ -90,7 +90,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="banner-con banner-bg-4 flex justify-center items-center text-white text-center">
-            <div className="banner-box w-2/4">
+            <div className="banner-box md:w-2/4">
               <h1 className="text-5xl">Join Our Summer Camp Learning</h1>
               <h4 className="text-lg py-2">
                 TAKE ADVANTAGE OF THIS AMAZING EXCLUSIVE OFFER DON`T MISS THIS

@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./Blog.css";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -16,6 +17,9 @@ const Blog = () => {
 
   return (
     <div className="p-5 max-w-screen-xl mx-auto blog">
+      <Helmet>
+        <title>Ola Conversa | Blog</title>
+      </Helmet>
       <h2 className="text-3xl py-5 text-center">
         <u>
           <b>Blog F&Q :</b>
@@ -33,16 +37,16 @@ const Blog = () => {
             id="panel1bh-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-              General settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              I am an accordion
+              What is axios in react ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              What is Axios? (A little bit of history) Axios is used to
+              communicate with the backend and it also supports the Promise API
+              that is native to JS ES6. It is a library which is used to make
+              requests to an API, return data from the API, and then do things
+              with that data in our React application.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -55,16 +59,17 @@ const Blog = () => {
             aria-controls="panel2bh-content"
             id="panel2bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>Users</Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              You are currently not an owner
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+              What is jwt authentication in react js ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat
-              lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-              laoreet laoreet.
+              JWT, or JSON Web Token, is a web protocol used to share security
+              information between client and a server. In a standard web
+              application, private API requests contain JWT that is generated as
+              a result of the verification of the user information, thus
+              allowing these users to reach protected data and access services.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -78,16 +83,15 @@ const Blog = () => {
             id="panel3bh-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-              Advanced settings
-            </Typography>
-            <Typography sx={{ color: "text.secondary" }}>
-              Filtering has been entirely disabled for whole web server
+              What is react hook form ?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              React Hook Form is a library that helps you validate forms in
+              React. It is a minimal library without any other dependencies,
+              while being performant and straightforward to use, requiring
+              developers to write fewer lines of code than other form libraries.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -101,13 +105,15 @@ const Blog = () => {
             id="panel4bh-header"
           >
             <Typography sx={{ width: "33%", flexShrink: 0 }}>
-              Personal data
+              npm in react.
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              NPM, the Node package manager is used for managing and sharing the
+              packages for either React or Angular. NPM will be installed along
+              with Nodejs. Node. js can be downloaded and installed from the
+              official NodeJs website.
             </Typography>
           </AccordionDetails>
         </Accordion>

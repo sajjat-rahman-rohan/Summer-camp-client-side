@@ -1,16 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaSkype, FaTwitter } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import useAdmin from "../../hooks/useAdmin";
 
 const InstructorCard = ({ item, refetch }) => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isAdmin] = useAdmin();
-  //   const [, refetch] = useCart();
 
   const [items, setItems] = useState(item);
 

@@ -9,9 +9,9 @@ const Services = () => {
     <div className="max-w-screen-xl mx-auto my-12">
       <div>
         <h2 className="text-center text-4xl">Our Services</h2>
-        <div className="divider w-96 mx-auto"></div>
+        <div className="divider md:w-96 mx-auto"></div>
       </div>
-      <div className="grid grid-cols-3 gap-10 text-center">
+      <div className="grid md:grid-cols-3 gap-10 text-center">
         <div>
           <img src={img1} className="inline" alt="" />
           <h2>National Awards</h2>

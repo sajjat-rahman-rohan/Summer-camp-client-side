@@ -11,6 +11,9 @@ import {
 } from "react-icons/fa";
 
 import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
+import useClasses from "../../../hooks/useClasses";
+import useInstructors from "../../../hooks/useInstructors";
+import { Helmet } from "react-helmet-async";
 
 const data01 = [
   { name: "Total Student", value: 1732 },
@@ -37,13 +40,19 @@ const AdminHome1 = () => {
     greeting = "Good evening";
   }
 
+  const [classes] = useClasses();
+  const [instructors] = useInstructors();
+
   return (
     <div className="p-5 ">
+      <Helmet>
+        <title>Dashboard | Admin-home</title>
+      </Helmet>
       <div>
         <h2>Profile</h2>
-        <p>
-          Welcome to {user.displayName} ! {greeting}
-        </p>
+        <h3>
+          {greeting} {user.displayName} !
+        </h3>
       </div>
 
       <div className="grid grid-cols-2 gap-5">
@@ -86,7 +95,7 @@ const AdminHome1 = () => {
               <h3>
                 <b>Our Classes</b>
               </h3>
-              <p className="text-gray-500"> Total 78 Classes</p>
+              <p className="text-gray-500"> Total {classes.length} Classes</p>
             </div>
           </div>
         </div>
@@ -100,7 +109,10 @@ const AdminHome1 = () => {
               <h3>
                 <b>Our Instuctors</b>
               </h3>
-              <p className="text-gray-500"> Total 34 Instructor</p>
+              <p className="text-gray-500">
+                {" "}
+                Total {instructors.length} Instructor
+              </p>
             </div>
           </div>
         </div>

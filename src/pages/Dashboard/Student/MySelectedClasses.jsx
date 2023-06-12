@@ -4,6 +4,7 @@ import img1 from "../../../assets/classes/class1.jpg";
 import { Link } from "react-router-dom";
 import useSelectedClass from "../../../hooks/useselectedclass";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MySelectedClasses = () => {
   const [selectClasses, refetch] = useSelectedClass();
@@ -38,6 +39,9 @@ const MySelectedClasses = () => {
 
   return (
     <div className="px-3 text-center">
+      <Helmet>
+        <title>Dashboard | Student-selected-class</title>
+      </Helmet>
       <div className="flex justify-between items-center px-2 mb-6">
         <h2 className="text-3xl">
           <u>
@@ -72,33 +76,12 @@ const MySelectedClasses = () => {
               </tr>
             </thead>
             <tbody>
-              {/* <tr>
-                <td>
-                  <p>1</p>
-                </td>
-                <td>
-                  <p>Spanish</p>
-                </td>
-                <td>
-                  <p>Kaif Barnet</p>
-                </td>
-                <td>
-                  <p>$220</p>
-                </td>
-                <th>
-                  <button className="btn btn-ghost btn-xs">Delete</button>
-                </th>
-                <th>
-                  <button className="btn btn-ghost btn-xs">Pay</button>
-                </th>
-              </tr> */}
               {selectClasses.map((item, index) => (
                 <tr key={item._id}>
                   <td>
                     <p>{index + 1}</p>
                   </td>
                   <td>
-                    {/* <p>{item.className}</p> */}
                     <div className="flex items-center space-x-3">
                       <img
                         src={item.image}

@@ -5,33 +5,6 @@ import Swal from "sweetalert2";
 import { Rating } from "@smastrom/react-rating";
 
 const InstructorClass = ({ item, index, refetch }) => {
-  const status = "pending"; // Replace with your status value
-
-  let pTagValue;
-  let bgColor;
-
-  if (status === "pending") {
-    pTagValue = "Pending";
-    bgColor = "yellow";
-  } else if (status === "approved") {
-    pTagValue = "Approved";
-    bgColor = "green";
-  } else if (status === "denied") {
-    pTagValue = "Denied";
-    bgColor = "red";
-  } else {
-    pTagValue = "Unknown";
-    bgColor = "gray";
-  }
-
-  const pTagStylep = {
-    backgroundColor: "yellow",
-  };
-
-  const pTagStylea = {
-    backgroundColor: "green",
-  };
-
   const handleDelete = (item) => {
     Swal.fire({
       title: "Are you sure?",
@@ -104,9 +77,10 @@ const InstructorClass = ({ item, index, refetch }) => {
             <>
               <div className="flex items-center justify-center">
                 <p
-                  className="rounded text-purple-100 bg-blue-600 p-1"
+                  className="rounded text-purple-100 bg-blue-600 p-1 cursor-pointer"
                   type="button"
                   onClick={() => setShowModal(true)}
+                  style={{ zIndex: "999" }}
                 >
                   see feedback
                 </p>
