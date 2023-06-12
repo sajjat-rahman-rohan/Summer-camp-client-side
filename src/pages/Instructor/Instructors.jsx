@@ -18,7 +18,9 @@ const Instructor = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/instructors");
+      const response = await axios.get(
+        "https://b7a12-summer-camp-server-side-psi.vercel.app/instructors"
+      );
       setInstructors(response.data);
     } catch (error) {
       console.error(error);

@@ -41,13 +41,16 @@ const Feedback = () => {
     };
     console.log(updatefeedback);
 
-    fetch(`http://localhost:5000/classes/feedback/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatefeedback),
-    })
+    fetch(
+      `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/feedback/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatefeedback),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -143,16 +143,20 @@ export const router = createBrowserRouter([
         path: "update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/${params.id}`),
-        // fetch(`http://localhost:5000/classes/${params.id}`),
+          fetch(
+            `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/${params.id}`
+          ),
+        // fetch(`https://b7a12-summer-camp-server-side-psi.vercel.app/classes/${params.id}`),
         // http://localhost:5173/dashboard/update/6483b374e79e3a0860036872
       },
       {
         path: "feedback/:id",
         element: <Feedback></Feedback>,
         loader: ({ params }) =>
-          // fetch(`http://localhost:5000/classes/${params.id}`),
-          fetch(`http://localhost:5000/classes/feedback/${params.id}`),
+          // fetch(`https://b7a12-summer-camp-server-side-psi.vercel.app/classes/${params.id}`),
+          fetch(
+            `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/feedback/${params.id}`
+          ),
       },
     ],
   },

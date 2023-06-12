@@ -1,7 +1,21 @@
 /* eslint-disable no-unused-vars */
 import { NavLink, Outlet } from "react-router-dom";
-import { FaWallet, FaCalendarAlt, FaHome } from "react-icons/fa";
+import {
+  FaWallet,
+  FaCalendarAlt,
+  FaHome,
+  FaHistory,
+  FaFileAlt,
+  FaUsers,
+} from "react-icons/fa";
+import {
+  MdBookmarkAdded,
+  MdIncompleteCircle,
+  MdManageAccounts,
+  MdManageHistory,
+} from "react-icons/md";
 import useAdmin from "../hooks/useAdmin";
+import { VscDiffAdded } from "react-icons/vsc";
 
 import "./Deshboard.css";
 
@@ -36,12 +50,12 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/manageclasses">
-                  <FaWallet></FaWallet> Manage Classes
+                  <MdManageHistory></MdManageHistory> Manage Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/manageusers">
-                  <FaWallet></FaWallet> Manage Users
+                  <MdManageAccounts></MdManageAccounts> Manage Users
                 </NavLink>
               </li>
             </>
@@ -54,12 +68,12 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/addaclass">
-                  <FaCalendarAlt></FaCalendarAlt> Add A New Class
+                  <VscDiffAdded></VscDiffAdded> Add A New Class
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/instructorclasses">
-                  <FaWallet></FaWallet> My Added Classes
+                  <MdIncompleteCircle></MdIncompleteCircle> My Added Classes
                 </NavLink>
               </li>
             </>
@@ -72,17 +86,17 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/myselectedclasses">
-                  <FaCalendarAlt></FaCalendarAlt> My Selected Classes
+                  <MdBookmarkAdded></MdBookmarkAdded> My Selected Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/myenrolledclasses">
-                  <FaWallet></FaWallet> My Enrolled Classes
+                  <MdIncompleteCircle></MdIncompleteCircle> My Enrolled Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/paymenthistory">
-                  <FaWallet></FaWallet> Payment History
+                  <FaHistory></FaHistory> Payment History
                 </NavLink>
               </li>
             </>
@@ -96,12 +110,12 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/instructors">
-              <FaHome></FaHome> Intructors
+              <FaUsers></FaUsers> Intructors
             </NavLink>
           </li>
           <li>
             <NavLink to="/classes">
-              <FaHome></FaHome> Classes
+              <FaFileAlt></FaFileAlt> Classes
             </NavLink>
           </li>
         </ul>

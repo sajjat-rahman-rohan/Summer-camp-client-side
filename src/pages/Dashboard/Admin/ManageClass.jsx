@@ -5,9 +5,12 @@ import Swal from "sweetalert2";
 
 const ManageClass = ({ item, index, refetch }) => {
   const statusChange = (item) => {
-    fetch(`http://localhost:5000/classes/approved/${item._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/approved/${item._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -35,9 +38,12 @@ const ManageClass = ({ item, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${item._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/${item._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

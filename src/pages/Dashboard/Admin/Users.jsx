@@ -4,9 +4,12 @@ import Swal from "sweetalert2";
 
 const Users = ({ user, index, refetch }) => {
   const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/admin/${user._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://b7a12-summer-camp-server-side-psi.vercel.app/users/admin/${user._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,9 +27,12 @@ const Users = ({ user, index, refetch }) => {
   };
 
   const handleMakeInstructor = (user) => {
-    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
-      method: "PATCH",
-    });
+    fetch(
+      `https://b7a12-summer-camp-server-side-psi.vercel.app/users/instructor/${user._id}`,
+      {
+        method: "PATCH",
+      }
+    );
     const selectedClass = {
       InstructorName: user.name,
       image: user.image,
@@ -37,13 +43,16 @@ const Users = ({ user, index, refetch }) => {
 
     console.log(selectedClass);
 
-    fetch("http://localhost:5000/aadedinstructors", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(selectedClass),
-    })
+    fetch(
+      "https://b7a12-summer-camp-server-side-psi.vercel.app/aadedinstructors",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(selectedClass),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -71,9 +80,12 @@ const Users = ({ user, index, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/${user._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b7a12-summer-camp-server-side-psi.vercel.app/users/${user._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

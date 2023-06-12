@@ -1,18 +1,18 @@
 ## They are used on this website :
 
-    - Header and Footer everypage.
-    - Home page banner , toy gallery, tab ways sub-category and 2toy , extra specialtoy , modal video , trending toy product and partner section.
-    - 3 tab sub-category view and details btn.
-    - all toys page show all toy and search , pagination add.
-    - my toys page only this user added toy show.
-    - my toys page update and delete btn.
-    - added a toy page new added toy form.
-    - view details btn show single toy.
-    - Loign page with google, github and facebook btn and Register page with velidation , firebase.
-    - connect firebase auth private and live site host firebase hosting.
-    - terms and condition.
-    - error page not show header or footer and load spinner.
-    - and finally CRUD operation.
+    - Header and Footer everypage without error page.
+    - Home page some section- banner part , services part, popular classes part, popular instructor part, old happy student part.
+    - instructor page show all instructor information.
+    - classes page show all class and if you want select any class without login, admin or instructor.
+    - blog page 4 F&Q.
+    - Login and SignUp page with facebook,google,github social media link.
+    - admin dashboard 3 menu adminhome , manageclasses, manageusers and admin have all premission.
+    - instructor dashboard 3 menu instructorhome, instructor-added-A-New-class, instructor added class and if instructor want any class
+      information update.
+    - student dashboard 4 menu studenthome, student-selectedclass, student-enrolledclass and student-paymenthistory.
+    - Payment operation with stripe card system.
+    - server side CRUD operation, JWT, Verify admin and Instructor and delpoy vercel server.
+    - this website MERN based.
 
 <br/>
 
@@ -24,7 +24,9 @@
 
 3-- Server side Code Link : https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-sajjat-rahman-rohan
 
-4-- Vercel side Link : https://b7-a11-toy-marketplace-server-side-two.vercel.app/
+4-- Vercel side Link : https://b7a12-summer-camp-server-side-psi.vercel.app/
 
--- Admin Email :
--- Admin Pw :
+## Admin Email and Password :
+
+-- Admin Email : sajjatrahman@gmail.com
+-- Admin Password : Hello22@

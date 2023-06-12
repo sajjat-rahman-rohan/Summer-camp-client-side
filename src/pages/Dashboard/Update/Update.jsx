@@ -45,13 +45,16 @@ const Update = () => {
     };
     console.log(updatedclass);
 
-    fetch(`http://localhost:5000/classes/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedclass),
-    })
+    fetch(
+      `https://b7a12-summer-camp-server-side-psi.vercel.app/classes/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedclass),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

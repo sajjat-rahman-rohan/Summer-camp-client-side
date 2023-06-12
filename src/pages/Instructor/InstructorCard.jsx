@@ -17,7 +17,7 @@ const InstructorCard = ({ item, refetch }) => {
         <figure className="px-10 pt-10">
           <img
             src={item.image}
-            alt="Shoes"
+            alt="Instructor img"
             className="rounded-xl"
             style={{
               height: "100px",
