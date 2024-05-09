@@ -26,7 +26,4 @@
 
 4-- Vercel side Link : https://b7a12-summer-camp-server-side-psi.vercel.app/
 
-## Admin Email and Password :
 
--- Admin Email : sajjatrahman@gmail.com
--- Admin Password : Hello22@
